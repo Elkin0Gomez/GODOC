@@ -17,17 +17,18 @@ public class FormularioDao extends Conexion{
             Connection con = getConection();
             PreparedStatement ps = null;
             
-            String sql = "INSERT INTO contrato (nombre, apellido, cedula, lugarExpedicion,valorContrato, fechainicio, fechaFin, fechaContrato ) VALUES (?,?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO contrato (nombre, apellido, cedula, direccion, lugarExpedicion,valorContrato, fechainicio, fechaFin, fechaContrato ) VALUES (?,?,?,?,?,?,?,?,?,?)";
         try {   
             ps = con.prepareStatement(sql);
             ps.setString(1, cont.getNombre() );
             ps.setString(2, cont.getApellido());
             ps.setString(3, cont.getCedula());
-            ps.setString(4, cont.getLugarExpedicion());
-            ps.setString(5, cont.getValorContrato());
-            ps.setString(6, cont.getFechaInicio());
-            ps.setString(7, cont.getFechaFin());
-            ps.setString(8, cont.getFechaContrato());
+            ps.setString(4, cont.getDireccion());
+            ps.setString(5, cont.getLugarExpedicion());
+            ps.setString(6, cont.getValorContrato());
+            ps.setString(7, cont.getFechaInicio());
+            ps.setString(8, cont.getFechaFin());
+            ps.setString(9, cont.getFechaContrato());
             
             ps.execute();
             return true;

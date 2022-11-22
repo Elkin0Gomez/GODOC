@@ -6,6 +6,7 @@ public class Contratista {
     private String nombre;
     private String apellido;
     private String cedula;
+    private String direccion;
     private String lugarExpedicion;
     private String valorContrato;
     private String fechaInicio;
@@ -20,6 +21,7 @@ public class Contratista {
         this.nombre = nombre;
         this.apellido = apellido;
         this.cedula = cedula;
+        this.direccion = direccion;
         this.lugarExpedicion = lugarExpedicion;
         this.valorContrato = valorContrato;
         this.fechaInicio = fechaInicio;
@@ -97,5 +99,13 @@ public class Contratista {
 
     public void setFechaContrato(String fechaContrato) {
         this.fechaContrato = fechaContrato;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 }

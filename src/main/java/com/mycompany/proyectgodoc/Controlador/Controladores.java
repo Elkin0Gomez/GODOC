@@ -24,7 +24,27 @@ public class Controladores implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        if (e.getSource()== form.jBGenerar){
+            guardar ();
+        
+        }
+        
+        
+      }
+    public void guardar(){
+    
+        contratista.setNombre(form.textNombre.getText());
+        contratista.setApellido(form.textApellido.getText());
+        contratista.setCedula(form.textDocumento1.getText());
+        contratista.setDireccion(form.textDireccion.getText());
+        contratista.setLugarExpedicion(form.textLugarEX.getText());
+        contratista.setFechaInicio(form..getText());
+        contratista.setValorContrato(form.textValorC.getText());
+        contratista.setValorContrato(form.text.getText());
+        
     }
+    
+    
     
 }
