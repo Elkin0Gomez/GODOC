@@ -5,15 +5,20 @@
  */
 package com.mycompany.proyectgodoc.VistaApp;
 
+import com.mycompany.proyectgodoc.Dao.FormularioDao;
+import com.mycompany.proyectgodoc.Modelo.Contratista;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
 /**
  *
  * @author USUARIO
  */
 public class Formulario extends javax.swing.JFrame {
+    
+   
 
-    /**
-     * Creates new form Formulario
-     */
+    
     public Formulario() {
         initComponents();
         
@@ -337,6 +342,34 @@ public class Formulario extends javax.swing.JFrame {
 
     private void jBGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGenerarActionPerformed
         // TODO add your handling code here:
+        FormularioDao formularioDao = new FormularioDao();
+        Contratista contratista = new Contratista();
+        
+        
+                String fechaInicio = ((JTextField)jDateFechaIn.getDateEditor().getUiComponent()).getText();
+                String fechaFin = ((JTextField)jDateFechaFin.getDateEditor().getUiComponent()).getText();
+                String fechaCon = ((JTextField)jDateFechaCon.getDateEditor().getUiComponent()).getText();
+                // seteamos los variables
+                contratista.setNombre(textNombre.getText());
+                contratista.setApellido(textApellido.getText());
+                contratista.setCedula(textDocumento1.getText());
+                contratista.setDireccion(textDireccion.getText());
+                contratista.setLugarExpedicion(textLugarEX.getText());
+                contratista.setValorContrato(textValorC.getText());
+                contratista.setFechaInicio(fechaInicio);
+                contratista.setFechaFin(fechaFin);
+                contratista.setFechaContrato(fechaCon);
+                
+                if (formularioDao.guardar(contratista)){
+                    JOptionPane.showMessageDialog(null, "Guardado");
+                    
+                }else {
+                
+                    JOptionPane.showMessageDialog(null, "Error al guardar");
+                
+                }
+        
+        
     }//GEN-LAST:event_jBGenerarActionPerformed
 
     private void jBVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVolverActionPerformed

@@ -13,12 +13,16 @@ import java.util.logging.Logger;
 public class FormularioDao extends Conexion{
     
     public boolean guardar (Contratista cont ){
+            
         
-            Connection con = getConection();
+            Conexion abcd = new Conexion();
+            //Connection con = getConection();
+            Connection con = abcd.getConection();
             PreparedStatement ps = null;
             
             String sql = "INSERT INTO contrato (nombre, apellido, cedula, direccion, lugarExpedicion,valorContrato, fechainicio, fechaFin, fechaContrato ) VALUES (?,?,?,?,?,?,?,?,?)";
         try {   
+            //ps = con.prepareStatement(sql);
             ps = con.prepareStatement(sql);
             ps.setString(1, cont.getNombre() );
             ps.setString(2, cont.getApellido());
@@ -30,7 +34,7 @@ public class FormularioDao extends Conexion{
             ps.setString(8, cont.getFechaFin());
             ps.setString(9, cont.getFechaContrato());
             
-            ps.execute();
+            ps.executeUpdate();
             return true;
             
             
@@ -38,7 +42,7 @@ public class FormularioDao extends Conexion{
             Logger.getLogger(FormularioDao.class.getName()).log(Level.SEVERE, null, ex);
             
             return false;
-        } finally {
+        } /*finally {
         
                 try {
                     con.close();
@@ -87,6 +91,6 @@ public class FormularioDao extends Conexion{
                 }
         }
         
-        
-    }*/
+        */
+    }
 }

@@ -41,7 +41,7 @@ public class Controladores implements ActionListener{
     public void actionPerformed(ActionEvent e) 
         {
         
-        if (e.getSource()== form.jBGenerar){
+        /*if (e.getSource()== form.jBGenerar){
                  // codigo para convertir el calendario en String
                 String fechaInicio = ((JTextField)form.jDateFechaIn.getDateEditor().getUiComponent()).getText();
                 String fechaFin = ((JTextField)form.jDateFechaFin.getDateEditor().getUiComponent()).getText();
@@ -65,7 +65,7 @@ public class Controladores implements ActionListener{
                 else   {
                    JOptionPane.showMessageDialog(null, "no se guardaron los datos"  );  
              } 
-     }
+     }*/
             
             
         

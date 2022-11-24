@@ -11,10 +11,13 @@ public class Main{
     
     public static void main(String[] args) {
      
-        Login login = new Login();
-        login.setVisible(true);
+        //Login login = new Login();
+        //login.setVisible(true);
         
-       // ControladorVistaLogin ctrlVistaLogin = new ControladorVistaLogin();
-        //ctrlVistaLogin.iniciar();
+       //ControladorVistaLogin ctrlVistaLogin = new ControladorVistaLogin();
+       //ctrlVistaLogin.iniciar();
+       
+       Controladores controladores = new Controladores();
+       controladores.iniciar();
     }
 }

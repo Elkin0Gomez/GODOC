@@ -10,20 +10,20 @@ import java.util.logging.Logger;
 public class Conexion {
     
     final String bd = "godoc";
-    final String url = "jdbc:mysql.cj://localhost:3306" + bd;
+    final String url = "jdbc:mysql://localhost:3306/" + bd;
     final String user = "root";
     final String pass = "";
-    final String driver = "com.mysql.cj.jdbc.driver";
-    private Connection con = null;
+    final String driver = "com.mysql.cj.jdbc.Driver";
+    
     
     public Conexion(){
     
     }
     public Connection getConection(){
-        
+        Connection con = null;
         try {
             Class.forName(driver);
-            con = DriverManager.getConnection(this.url);
+            con = DriverManager.getConnection(this.url, user, pass);
             System.out.println("Conectando a la bd");
         } catch (SQLException e) {
             System.err.println("e");
