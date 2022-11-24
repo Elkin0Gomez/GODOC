@@ -16,15 +16,15 @@ public class LoginDao extends Conexion{
     
         Connection con = getConection();
         PreparedStatement ps;
-        String sql = "INSERT INTO asesor (documento, nombre, apellido, correo, contraseña, rol) VALUES (?,?,?,?,?,?) ";
+        String sql = "INSERT INTO asesor ( nombre, apellido, documento, correo, contraseña, rol) VALUES (?,?,?,?,?,?) ";
         
         String rol = "user";
         try {
             
             ps = con.prepareStatement(sql);
-            ps.setString(1, as.getDocumento());
-            ps.setString(2, as.getNombre());
-            ps.setString(3, as.getApellido());
+            ps.setString(1, as.getNombre());
+            ps.setString(2, as.getApellido());
+            ps.setString(3, as.getDocumento());
             ps.setString(4, as.getCorreo());
             ps.setString(5, as.getContraseña());
             ps.setString(5, rol);

@@ -26,6 +26,7 @@ public class Login extends javax.swing.JFrame {
         jTextNomUs = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jButtonEntrar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jTextContraseña = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
@@ -65,7 +66,18 @@ public class Login extends javax.swing.JFrame {
                 jButtonEntrarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 80, -1));
+        jPanel1.add(jButtonEntrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 90, -1));
+
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Calibri", 1, 13)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 0, 0));
+        jButton1.setText("REGISTRARSE");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, -1, -1));
 
         jTextContraseña.setBackground(new java.awt.Color(255, 255, 255));
         jTextContraseña.addActionListener(new java.awt.event.ActionListener() {
@@ -103,7 +115,26 @@ public class Login extends javax.swing.JFrame {
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
         // TODO add your handling code here:
+        
+        String usuario = this.jTextNomUs.getText();
+        String contraseña = this.jTextContraseña.getText();
+        
+        if(usuario.equals("root") && contraseña.equals("root"))
+        {
+            Formulario ventana = new Formulario();
+            ventana.setVisible(true);
+            System.out.println("A");
+            this.dispose();
+        }
     }//GEN-LAST:event_jButtonEntrarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        VistaRegistro Vregistro = new VistaRegistro();
+        Vregistro.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,6 +172,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton jButton1;
     public javax.swing.JButton jButtonEntrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
