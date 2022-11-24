@@ -24,8 +24,8 @@ public class Contratista {
         this.direccion = direccion;
         this.lugarExpedicion = lugarExpedicion;
         this.valorContrato = valorContrato;
-        this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
+        this.fechaInicio = fechaInicio;
         this.fechaContrato = fechaContrato;
     }
 
