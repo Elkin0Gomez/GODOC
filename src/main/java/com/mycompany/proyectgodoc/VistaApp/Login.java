@@ -1,5 +1,10 @@
 package com.mycompany.proyectgodoc.VistaApp;
 
+import com.mycompany.proyectgodoc.Controlador.Controladores;
+import com.mycompany.proyectgodoc.Dao.LoginDao;
+import com.mycompany.proyectgodoc.Modelo.Asesor;
+import javax.swing.JOptionPane;
+
 
 public class Login extends javax.swing.JFrame {
 
@@ -23,17 +28,15 @@ public class Login extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextNomUs = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        jTextUser = new javax.swing.JTextField();
+        jPass = new javax.swing.JPasswordField();
         jButtonEntrar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jTextContraseña = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
-        setUndecorated(true);
-        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -43,18 +46,25 @@ public class Login extends javax.swing.JFrame {
         jLabel2.setText("Digite su usuario");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, -1, 20));
 
-        jTextNomUs.setBackground(new java.awt.Color(255, 255, 255));
-        jTextNomUs.addActionListener(new java.awt.event.ActionListener() {
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel3.setText("***********");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 100, -1));
+
+        jTextUser.setBackground(new java.awt.Color(255, 255, 255));
+        jTextUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextNomUsActionPerformed(evt);
+                jTextUserActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextNomUs, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 150, -1));
+        jPanel1.add(jTextUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 180, 150, -1));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel3.setText("***********");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, -1, 30));
+        jPass.setBackground(new java.awt.Color(255, 255, 255));
+        jPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPassActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 150, -1));
 
         jButtonEntrar.setBackground(new java.awt.Color(255, 255, 255));
         jButtonEntrar.setFont(new java.awt.Font("Calibri", 1, 13)); // NOI18N
@@ -72,20 +82,13 @@ public class Login extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Calibri", 1, 13)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 0, 0));
         jButton1.setText("REGISTRARSE");
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, -1, -1));
-
-        jTextContraseña.setBackground(new java.awt.Color(255, 255, 255));
-        jTextContraseña.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextContraseñaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jTextContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 150, -1));
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon("D:\\Users\\usuario\\Documents\\NetBeansProjects\\PROYECTGODOC\\src\\main\\java\\com\\mycompany\\proyectgodoc\\Imagenes\\FONDO2.PNG")); // NOI18N
@@ -105,26 +108,25 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextNomUsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextNomUsActionPerformed
+    private void jTextUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextUserActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextNomUsActionPerformed
-
-    private void jTextContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextContraseñaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextContraseñaActionPerformed
+    }//GEN-LAST:event_jTextUserActionPerformed
 
     private void jButtonEntrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntrarActionPerformed
         // TODO add your handling code here:
         
-        String usuario = this.jTextNomUs.getText();
-        String contraseña = this.jTextContraseña.getText();
+        VistaMenu Vmenu = new VistaMenu();
+         LoginDao loginDao = new LoginDao();
+        String usuario = this.jTextUser.getText();
+        String pass = String.valueOf(jPass.getText());
+       // String contraseña = this.jTextContraseña.getText();
         
-        if(usuario.equals("root") && contraseña.equals("root"))
+        if(loginDao.ingresar(usuario, pass))
         {
-            Formulario ventana = new Formulario();
-            ventana.setVisible(true);
-            System.out.println("A");
-            this.dispose();
+            setVisible(false);
+            Vmenu.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null, "DATOS INCORRECTOS");
         }
     }//GEN-LAST:event_jButtonEntrarActionPerformed
 
@@ -135,6 +137,10 @@ public class Login extends javax.swing.JFrame {
         Vregistro.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPassActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPassActionPerformed
 
     /**
      * @param args the command line arguments
@@ -178,7 +184,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    public javax.swing.JTextField jTextContraseña;
-    public javax.swing.JTextField jTextNomUs;
+    public javax.swing.JPasswordField jPass;
+    public javax.swing.JTextField jTextUser;
     // End of variables declaration//GEN-END:variables
 }

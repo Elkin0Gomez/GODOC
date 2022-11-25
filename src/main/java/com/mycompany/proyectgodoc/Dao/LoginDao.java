@@ -11,10 +11,12 @@ import java.util.logging.Logger;
 
 
 public class LoginDao extends Conexion{
+
     
-    public boolean guardar (Asesor as){
+    public boolean registrar (Asesor as){
     
-        Connection con = getConection();
+        Conexion abcd = new Conexion();
+        Connection con = abcd.getConection();
         PreparedStatement ps;
         String sql = "INSERT INTO asesor ( nombre, apellido, documento, correo, contraseña, rol) VALUES (?,?,?,?,?,?) ";
         
@@ -27,12 +29,14 @@ public class LoginDao extends Conexion{
             ps.setString(3, as.getDocumento());
             ps.setString(4, as.getCorreo());
             ps.setString(5, as.getContraseña());
-            ps.setString(5, rol);
+            ps.setString(6, as.getRol());
             
+            ps.executeUpdate();
             return true;
             
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
             
+            Logger.getLogger(LoginDao.class.getName()).log(Level.SEVERE, null, ex);
             System.err.println(ex);
             return false;
             
@@ -45,7 +49,7 @@ public class LoginDao extends Conexion{
         Connection con = getConection();
         PreparedStatement ps = null;
         ResultSet rs;
-        String sql = "SELECT id, correo, contraseña FROM asesor WHERE correo = '"+user+"' AND contraseña = '"+pass+"'";
+        String sql = "SELECT id, documento, contraseña FROM asesor WHERE documento = '"+user+"' AND contraseña = '"+pass+"'";
         
         try {
             ps = con.prepareStatement(sql);
@@ -53,11 +57,9 @@ public class LoginDao extends Conexion{
             
             if (rs.next())
             {
-            
                 return true;
             }else
             {
-            
                 return false;
             }
          

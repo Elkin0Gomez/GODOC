@@ -277,6 +277,7 @@ public class Formulario extends javax.swing.JFrame {
         jBGenerar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jBGenerar.setForeground(new java.awt.Color(0, 0, 0));
         jBGenerar.setText("GENERAR");
+        jBGenerar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBGenerar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBGenerarActionPerformed(evt);
@@ -288,6 +289,7 @@ public class Formulario extends javax.swing.JFrame {
         jBVolver.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jBVolver.setForeground(new java.awt.Color(0, 0, 0));
         jBVolver.setText("Volver");
+        jBVolver.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jBVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBVolverActionPerformed(evt);
@@ -374,6 +376,12 @@ public class Formulario extends javax.swing.JFrame {
 
     private void jBVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVolverActionPerformed
         // TODO add your handling code here:
+        
+        VistaMenu Vmenu = new VistaMenu();
+        Vmenu.setVisible(true);
+        this.dispose();
+        
+        
     }//GEN-LAST:event_jBVolverActionPerformed
 
     /**
