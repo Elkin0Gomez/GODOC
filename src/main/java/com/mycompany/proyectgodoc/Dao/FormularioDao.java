@@ -10,7 +10,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
+    
 public class FormularioDao extends Conexion{
+    
     
     public boolean guardar (Contratista cont ){
             
@@ -48,7 +50,7 @@ public class FormularioDao extends Conexion{
                     con.close();
                 } catch (SQLException ex) {
                     Logger.getLogger(FormularioDao.class.getName()).log(Level.SEVERE, null, ex);
-                }
+}
         }
         
         

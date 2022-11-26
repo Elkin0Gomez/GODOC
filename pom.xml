@@ -11,6 +11,11 @@
             <name>A temporary repository created by NetBeans for libraries and jars it could not identify. Please replace the dependencies in this repository with correct ones and delete this repository.</name>
             <url>file:${project.basedir}/lib</url>
         </repository>
+        <repository>
+            <id>AsposeJavaAPI</id>
+            <name>Aspose Java API</name>
+            <url>https://releases.aspose.com/java/repo/</url>
+        </repository>
     </repositories>
     <dependencies>
         <dependency>
@@ -33,10 +38,11 @@
             <artifactId>poi</artifactId>
             <version>5.2.3</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.itextpdf/itextpdf -->
         <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml-schemas</artifactId>
-            <version>4.1.2</version>
+             <groupId>com.itextpdf</groupId>
+             <artifactId>itextpdf</artifactId>
+             <version>5.5.6</version>
         </dependency>
     </dependencies>
     <properties>
