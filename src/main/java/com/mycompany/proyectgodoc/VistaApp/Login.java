@@ -1,8 +1,6 @@
 package com.mycompany.proyectgodoc.VistaApp;
 
-import com.mycompany.proyectgodoc.Controlador.Controladores;
 import com.mycompany.proyectgodoc.Dao.LoginDao;
-import com.mycompany.proyectgodoc.Modelo.Asesor;
 import javax.swing.JOptionPane;
 
 

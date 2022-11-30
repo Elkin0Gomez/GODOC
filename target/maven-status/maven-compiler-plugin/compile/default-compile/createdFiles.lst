@@ -1,10 +1,10 @@
 com\mycompany\proyectgodoc\Modelo\Asesor.class
+com\mycompany\proyectosemestre\LeerDocumento.class
 com\mycompany\proyectgodoc\VistaApp\Formulario$3.class
 com\mycompany\proyectgodoc\VistaApp\VistaRegistro$5.class
 com\mycompany\proyectgodoc\VistaApp\Login$4.class
 com\mycompany\proyectgodoc\VistaApp\Login$2.class
 com\mycompany\proyectgodoc\VistaApp\Formulario$5.class
-com\mycompany\proyectgodoc\Modelo\LeerDocumento.class
 com\mycompany\proyectgodoc\VistaApp\VistaMenu$3.class
 com\mycompany\proyectgodoc\Dao\Constantes.class
 com\mycompany\proyectgodoc\VistaApp\VistaRegistro$1.class
@@ -31,6 +31,7 @@ com\mycompany\proyectgodoc\VistaApp\Formulario$6.class
 com\mycompany\proyectgodoc\Controlador\ControladorVistaLogin.class
 com\mycompany\proyectgodoc\VistaApp\Formulario$8.class
 com\mycompany\proyectgodoc\VistaApp\Login$5.class
+io\github\picodotdev\blogbitix\javapdf\Contrato1.class
 com\mycompany\proyectgodoc\VistaApp\VistaRegistro$3.class
 com\mycompany\proyectgodoc\VistaApp\VistaMenu$2.class
 com\mycompany\proyectgodoc\Modelo\Contratista2.class
