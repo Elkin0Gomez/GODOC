@@ -9,6 +9,7 @@ public class Login extends javax.swing.JFrame {
   
     public Login() {
         initComponents();
+        JLmensaje.setVisible(false);
         
         //codigo para ubicar formulario en el centro de la pantalla
         this.setLocationRelativeTo(null);
@@ -27,6 +28,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        JLmensaje = new javax.swing.JLabel();
         jTextUser = new javax.swing.JTextField();
         jPass = new javax.swing.JPasswordField();
         jButtonEntrar = new javax.swing.JButton();
@@ -47,6 +49,11 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel3.setText("***********");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 230, 100, -1));
+
+        JLmensaje.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        JLmensaje.setForeground(new java.awt.Color(255, 255, 255));
+        JLmensaje.setText("Datos incorrectos");
+        jPanel1.add(JLmensaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 130, -1));
 
         jTextUser.setBackground(new java.awt.Color(255, 255, 255));
         jTextUser.addActionListener(new java.awt.event.ActionListener() {
@@ -124,10 +131,19 @@ public class Login extends javax.swing.JFrame {
             setVisible(false);
             Vmenu.setVisible(true);
         }else{
-            JOptionPane.showMessageDialog(null, "DATOS INCORRECTOS");
+            JLmensaje.setVisible(true);
+            Limpiar();
+            
         }
     }//GEN-LAST:event_jButtonEntrarActionPerformed
-
+    
+    private void Limpiar (){
+        
+        jTextUser.setText("");
+        jPass.setText("");
+       
+    }
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
@@ -176,6 +192,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel JLmensaje;
     public javax.swing.JButton jButton1;
     public javax.swing.JButton jButtonEntrar;
     private javax.swing.JLabel jLabel1;
